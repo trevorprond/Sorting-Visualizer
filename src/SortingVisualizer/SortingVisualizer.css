@@ -143,4 +143,31 @@ nav {
     outline: none;
 }
 
+@media (max-width: 768px) {
+    .array-container{
+        position: center;
+        width: 100%;
+        left: 50px;
+    }
+    
+    nav {
+        max-width: 350px;
+    }
+
+    button {
+        max-width: 45px;
+        font-size: 5px;
+        text-align: center;
+        height: 30px;
+    }
+
+    .astext {
+        font-size: 10px;
+    }
+
+
+    
+
+}
+
 
