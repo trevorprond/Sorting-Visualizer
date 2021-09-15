@@ -3,6 +3,7 @@ import {getMergeSortAnimations} from '../SortingAlgorithms/MergeSort.js';
 import {Quick} from '../SortingAlgorithms/QuickSort.js';
 import {Heap}  from '../SortingAlgorithms/HeapSort.js';
 import {Bubble} from '../SortingAlgorithms/BubbleSort.js';
+import { bar_update } from './VisualizeHelper.js';
 import './SortingVisualizer.css';
 
 // Change this value for the speed of the animations.
@@ -68,7 +69,13 @@ export default class SortingVisualizer extends React.Component {
     }
    
     this.setState({array});
-  
+
+    const arrayBars = document.getElementsByClassName('array-bar');
+    for (let i = 0; i < arrayBars.length; i++){
+      arrayBars[i].style.backgroundColor = PRIMARY_COLOR;
+
+    }
+    
   }
 
   mergeSort() {
@@ -84,12 +91,14 @@ export default class SortingVisualizer extends React.Component {
         setTimeout(() => {
           barOneStyle.backgroundColor = color;
           barTwoStyle.backgroundColor = color;
+          barOneStyle.backgroundColor = 'green';
         }, i * ANIMATION_SPEED_MS);
       } else {
         setTimeout(() => {
           const [barOneIdx, newHeight] = animations[i];
           const barOneStyle = arrayBars[barOneIdx].style;
           barOneStyle.height = `${newHeight}px`;
+          barOneStyle.backgroundColor = 'green';
         }, i * ANIMATION_SPEED_MS);
       }
     }

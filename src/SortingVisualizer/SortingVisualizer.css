@@ -6,11 +6,11 @@
   .array-bar {
     width: 3.5px;
     background-color:'turquoise';
-    display: inline-block;
+    display: inline-block ;
     margin: 0 1px;
     text-align: center;
     margin-top: 50px;
-    
+
     
   }
   .nav_link--list {
